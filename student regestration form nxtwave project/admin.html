@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Admin Dashboard</h1>
+        <p>Student Registration and Management System</p>
+    </header>
+
+    <main class="container">
+
+        <section class="form-section">
+            <h2>Registered Students</h2>
+            <p>View and manage student records below.</p>
+
+            <button type="button" id="logoutButton">Logout</button>
+        </section>
+
+        <section class="form-section">
+            <h2>Filter Students</h2>
+
+            <div class="filter-group">
+                <label for="searchName">Search by Name</label>
+                <input type="search" id="searchName" placeholder="Enter student name">
+            </div>
+
+            <div class="filter-group">
+                <label for="searchClass">Filter by Class</label>
+                <input type="search" id="searchClass" placeholder="Enter class">
+            </div>
+
+            <div class="filter-group">
+                <label for="minAge">Minimum Age</label>
+                <input type="number" id="minAge" min="0" placeholder="Minimum age">
+            </div>
+
+            <div class="filter-group">
+                <label for="maxAge">Maximum Age</label>
+                <input type="number" id="maxAge" min="0" placeholder="Maximum age">
+            </div>
+
+            <button type="button" id="clearFilters">Clear Filters</button>
+        </section>
+
+        <section class="form-section">
+            <h2>Student Records</h2>
+
+            <p id="studentCount">Total Students: 0</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Date of Birth</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Qualification</th>
+                            <th>Interests</th>
+                            <th>Class</th>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                            <th>Aadhaar PDF</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody">
+                        <tr>
+                            <td colspan="13">No student records loaded yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="adminMessage" role="status"></p>
+        </section>
+
+        <section id="editSection" class="form-section" hidden>
+            <h2>Edit Student Details</h2>
+
+            <form id="editStudentForm">
+                <input type="hidden" id="editStudentId">
+
+                <label for="editName">Name (Locked)</label>
+                <input type="text" id="editName" readonly>
+
+                <label for="editEmail">Email (Locked)</label>
+                <input type="email" id="editEmail" readonly>
+
+                <label for="editDob">Date of Birth</label>
+                <input type="date" id="editDob" required>
+
+                <label for="editGender">Gender</label>
+                <select id="editGender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="editQualification">Qualification</label>
+                <select id="editQualification" required>
+                    <option value="10th">10th</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Degree">Degree</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="editInterests">Interests</label>
+                <input type="text" id="editInterests" placeholder="Programming, Sports, Music">
+
+                <label for="editClass">Class</label>
+                <input type="text" id="editClass" required>
+
+                <label for="editSubject">Subject</label>
+                <input type="text" id="editSubject" required>
+
+                <label for="editMarks">Marks</label>
+                <input type="number" id="editMarks" min="0" max="100" required>
+
+                <label for="editAadhaar">Replace Aadhaar PDF (Optional)</label>
+                <input type="file" id="editAadhaar" accept=".pdf,application/pdf">
+
+                <p id="editMessage" role="alert"></p>
+
+                <button type="submit">Save Changes</button>
+                <button type="button" id="cancelEdit">Cancel</button>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="js files/admin.js"></script>
+
+</body>
+</html>

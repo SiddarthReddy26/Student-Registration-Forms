@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f3f6fb;
+    color: #222;
+}
+
+header {
+    background: #1f4ed8;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.form-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label,
+legend {
+    font-weight: bold;
+}
+
+input,
+select,
+button {
+    font-size: 16px;
+}
+
+input,
+select {
+    padding: 10px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+fieldset label {
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+button {
+    background: #1f4ed8;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #163db6;
+}
+
+#clearFilters {
+    background: #475569;
+}
+
+#clearFilters:hover {
+    background: #334155;
+}
+
+#editProfileButton {
+    background: #0f766e;
+}
+
+#editProfileButton:hover {
+    background: #0b5d57;
+}
+
+#registerMessage,
+#loginMessage,
+#forgotMessage,
+#adminMessage,
+#editMessage,
+#profileEditMessage {
+    color: red;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+#adminMessage {
+    color: green;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    background: #eef4ff;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.profile-details p {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+    .profile-details {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 94%;
+    }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Dashboard</h1>
+        <p>Student Registration and Management System</p>
+    </header>
+
+    <main class="container">
+
+        <section class="form-section">
+            <h2 id="welcomeMessage">Welcome, Student</h2>
+
+            <p id="studentId">User ID: Not loaded</p>
+
+            <button type="button" id="logoutButton">Logout</button>
+        </section>
+
+        <section class="form-section">
+            <h2>My Profile</h2>
+
+            <div class="profile-details">
+                <p>
+                    <strong>Full Name:</strong>
+                    <span id="profileName">-</span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="profileEmail">-</span>
+                </p>
+
+                <p>
+                    <strong>Date of Birth:</strong>
+                    <span id="profileDob">-</span>
+                </p>
+
+                <p>
+                    <strong>Gender:</strong>
+                    <span id="profileGender">-</span>
+                </p>
+
+                <p>
+                    <strong>Qualification:</strong>
+                    <span id="profileQualification">-</span>
+                </p>
+
+                <p>
+                    <strong>Interests:</strong>
+                    <span id="profileInterests">-</span>
+                </p>
+
+                <p>
+                    <strong>Class:</strong>
+                    <span id="profileClass">-</span>
+                </p>
+
+                <p>
+                    <strong>Subject:</strong>
+                    <span id="profileSubject">-</span>
+                </p>
+
+                <p>
+                    <strong>Marks:</strong>
+                    <span id="profileMarks">-</span>
+                </p>
+
+                <p>
+                    <strong>Aadhaar Document:</strong>
+                    <span id="profileDocument">No document selected</span>
+                </p>
+            </div>
+
+            <button type="button" id="editProfileButton">Edit Profile</button>
+        </section>
+
+        <section id="editProfileSection" class="form-section" hidden>
+            <h2>Edit My Profile</h2>
+
+            <form id="editProfileForm">
+                <input type="hidden" id="profileEditId">
+
+                <label for="profileEditName">Full Name</label>
+                <input type="text" id="profileEditName" required>
+
+                <label for="profileEditEmail">Email (Cannot be changed)</label>
+                <input type="email" id="profileEditEmail" readonly>
+
+                <label for="profileEditDob">Date of Birth</label>
+                <input type="date" id="profileEditDob" required>
+
+                <fieldset>
+                    <legend>Gender</legend>
+
+                    <label>
+                        <input type="radio" name="profileEditGender" value="Male" required>
+                        Male
+                    </label>
+
+                    <label>
+                        <input type="radio" name="profileEditGender" value="Female">
+                        Female
+                    </label>
+
+                    <label>
+                        <input type="radio" name="profileEditGender" value="Other">
+                        Other
+                    </label>
+                </fieldset>
+
+                <label for="profileEditQualification">Qualification</label>
+                <select id="profileEditQualification" required>
+                    <option value="">Select Qualification</option>
+                    <option value="10th">10th</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Degree">Degree</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <fieldset>
+                    <legend>Interests</legend>
+
+                    <label>
+                        <input type="checkbox" name="profileEditInterests" value="Programming">
+                        Programming
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="profileEditInterests" value="Sports">
+                        Sports
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="profileEditInterests" value="Music">
+                        Music
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="profileEditInterests" value="Reading">
+                        Reading
+                    </label>
+                </fieldset>
+
+                <label for="profileEditClass">Class</label>
+                <input type="text" id="profileEditClass" required>
+
+                <label for="profileEditSubject">Subject</label>
+                <input type="text" id="profileEditSubject" required>
+
+                <label for="profileEditMarks">Marks</label>
+                <input type="number" id="profileEditMarks" min="0" max="100" required>
+
+                <label for="profileEditAadhaar">Replace Aadhaar Document (PDF only)</label>
+                <input type="file" id="profileEditAadhaar" accept=".pdf,application/pdf">
+
+                <p id="profileEditMessage" role="alert"></p>
+
+                <button type="submit">Save Changes</button>
+                <button type="button" id="cancelProfileEdit">Cancel</button>
+            </form>
+        </section>
+
+    </main>
+
+
+    <script src="js files/student.js"></script>
+
+</body>
+</html>
